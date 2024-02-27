@@ -1,0 +1,24 @@
+{{ define "header" }}
+<!doctype html>
+<html lang="en" data-bs-theme="dark"></html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .title }}</title>
+
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/assets/js/bootstrap.min.js"></script>
+</head>
+{{ end }}
+
+{{ define "paginator"}}
+<nav class="navbar navbar-expand-sm fixed-top">
+  <div class="container-fluid">
+  <ul class="pagination">
+    {{range .page_list}}
+      <li class="page-item {{if .is_current}} active {{else}} {{end}}" ><a class="page-link" href="?p={{.page_num}}">{{.page_num}}</a></li>
+    {{end}}
+  </ul>
+  </div>
+</nav>
+{{ end }}

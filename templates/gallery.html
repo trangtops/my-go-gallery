@@ -1,0 +1,23 @@
+
+{{ template "header" .}}
+
+<body>
+  {{ template "paginator" .}}
+
+  <div class="container-fluid" style="margin-top:80px">
+    <h1>{{.title}}</h1>
+    <div class="row">
+    {{range .alblums}}
+    
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="/a/{{.alblum_id}}">
+          <img class="img-fluid img-thumbnail" src="/s/{{.alblum_id}}/{{.thumbnail}}">
+        </a>
+      </div>
+    
+    {{end}}
+  </div>
+  {{ template "paginator" .}}
+  </div>
+</body>
+
